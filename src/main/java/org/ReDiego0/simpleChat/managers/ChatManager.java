@@ -17,31 +17,27 @@ public class ChatManager {
     }
 
     public Component formatMessage(Player player, String message) {
-        // Obtener el grupo del jugador
         ChatGroup group = plugin.getGroupManager().getPlayerGroup(player);
-        
-        // Obtener el formato del grupo
         String format = group.getFormat();
-        
-        // Reemplazar placeholders básicos
+
+        // Aplica PlaceholderAPI al formato y al mensaje ANTES de MiniMessage
+        if (plugin.getConfigManager().isPlaceholderAPIEnabled() &&
+            Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            format = PlaceholderAPI.setPlaceholders(player, format);
+            message = PlaceholderAPI.setPlaceholders(player, message);
+        }
+
         format = format.replace("%player_name%", player.getName());
         format = format.replace("%world%", player.getWorld().getName());
         format = format.replace("%message%", message);
-        
-        // Aplicar PlaceholderAPI si está habilitado
-        if (plugin.getConfigManager().isPlaceholderAPIEnabled() && 
-            Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            format = PlaceholderAPI.setPlaceholders(player, format);
-        }
-        
-        // Convertir a Component usando MiniMessage o Legacy
+
         Component finalComponent;
         if (plugin.getConfigManager().isMinimessageEnabled()) {
             finalComponent = plugin.getMiniMessage().deserialize(format);
         } else {
             finalComponent = LegacyComponentSerializer.legacyAmpersand().deserialize(format);
         }
-        
+
         return finalComponent;
     }
 
