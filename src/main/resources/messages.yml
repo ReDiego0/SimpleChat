@@ -1,0 +1,53 @@
+# Mensajes del plugin SimpleChat
+# Usa MiniMessage para formato: https://docs.adventure.kyori.net/minimessage/format.html
+
+messages:
+  # Mensajes generales
+  general:
+    no-permission: "<red>No tienes permiso para usar este comando."
+    player-only: "<red>Este comando solo puede ser usado por jugadores."
+    unknown-command: "<red>Comando desconocido. Usa <yellow>/simplechat help</yellow> para ver la ayuda."
+    
+  # Mensajes de comandos
+  commands:
+    reload-success: "<green>Configuración recargada correctamente."
+    reload-error: "<red>Error al recargar la configuración. Revisa la consola para más detalles."
+    
+  # Mensajes de chat
+  chat:
+    world-disabled: "<red>El chat está deshabilitado en este mundo."
+    no-permission: "<red>No tienes permiso para usar el chat."
+    cooldown: "<red>¡Espera <yellow>%time%</yellow> segundos antes de enviar otro mensaje!"
+    same-message: "<red>No puedes enviar el mismo mensaje varias veces seguidas."
+    message-blocked: "<red>Tu mensaje contiene palabras no permitidas."
+    
+  # Mensajes de grupos
+  groups:
+    created: "<green>Grupo '<yellow>%group%</yellow>' creado correctamente."
+    removed: "<green>Grupo '<yellow>%group%</yellow>' eliminado correctamente."
+    not-found: "<red>El grupo '<yellow>%group%</yellow>' no existe."
+    cannot-remove-default: "<red>No puedes eliminar el grupo por defecto."
+    format-updated: "<green>Formato del grupo '<yellow>%group%</yellow>' actualizado."
+    
+  # Mensajes de ayuda
+  help:
+    header: "<gold>========= <yellow>SimpleChat Help</yellow> ========="
+    footer: "<gold>======================================"
+    reload: "<yellow>/simplechat reload</yellow> <gray>- Recarga la configuración"
+    toggle: "<yellow>/simplechat toggle <mundo></yellow> <gray>- Activa/desactiva el chat en un mundo"
+    format: "<yellow>/simplechat format <grupo> <formato></yellow> <gray>- Cambia el formato de un grupo"
+    group-list: "<yellow>/simplechat group list</yellow> <gray>- Lista todos los grupos"
+    group-create: "<yellow>/simplechat group create <nombre> <prioridad> <permiso></yellow> <gray>- Crea un nuevo grupo"
+    group-remove: "<yellow>/simplechat group remove <nombre></yellow> <gray>- Elimina un grupo"
+    info: "<yellow>/simplechat info</yellow> <gray>- Muestra información del plugin"
+    
+  # Mensajes de información
+  info:
+    header: "<gold>========= <yellow>SimpleChat Info</yellow> ========="
+    version: "<yellow>Versión: <white>%version%"
+    author: "<yellow>Autor: <white>%author%"
+    worlds: "<yellow>Mundos habilitados: <white>%count%"
+    groups: "<yellow>Grupos cargados: <white>%count%"
+    minimessage: "<yellow>MiniMessage: <white>%status%"
+    placeholderapi: "<yellow>PlaceholderAPI: <white>%status%"
+    footer: "<gold>======================================"

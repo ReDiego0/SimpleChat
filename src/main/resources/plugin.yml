@@ -1,0 +1,29 @@
+name: SimpleChat
+version: '1.0-SNAPSHOT'
+main: org.ReDiego0.simpleChat.SimpleChat
+api-version: '1.20'
+depend: [PlaceholderAPI]
+softdepend: [Vault]
+author: ReDiego0
+description: Sistema de chat personalizable con soporte para PlaceholderAPI y MiniMessage
+
+commands:
+  simplechat:
+    description: Comando principal del plugin
+    usage: /simplechat <reload|toggle|format>
+    permission: simplechat.admin
+    aliases: [schat, sc]
+
+permissions:
+  simplechat.admin:
+    description: Permite administrar el plugin
+    default: op
+  simplechat.use:
+    description: Permite usar el chat
+    default: true
+  simplechat.color:
+    description: Permite usar colores en el chat
+    default: false
+  simplechat.format:
+    description: Permite usar formato en el chat
+    default: false

@@ -1,0 +1,87 @@
+# Configuración principal de SimpleChat
+# Versión: 1.0
+
+# Configuración general del plugin
+general:
+  # Idioma del plugin (es, en)
+  language: es
+  # Verificar actualizaciones al iniciar
+  check-updates: true
+
+# Configuración de MiniMessage
+minimessage:
+  # Habilitar soporte para MiniMessage (formato moderno)
+  enabled: true
+  # Permitir tags HTML básicos
+  allow-html: false
+
+# Configuración de PlaceholderAPI
+placeholderapi:
+  # Habilitar integración con PlaceholderAPI
+  enabled: true
+  # Prefijo para los placeholders del plugin
+  prefix: "simplechat"
+
+# Mundos donde el chat está habilitado
+# Lista vacía = habilitado en todos los mundos
+enabled-worlds:
+  - world
+  - world_nether
+  - world_the_end
+
+# Configuración de chat
+chat:
+  # Cancelar evento de chat por defecto
+  cancel-default-chat: true
+  # Alcance del chat (GLOBAL, WORLD, LOCAL)
+  scope: WORLD
+  # Distancia para chat local (en bloques)
+  local-distance: 50
+  # Formato cuando no hay grupos configurados
+  default-format: "<white>%player_name%<gray>: <white>%message%"
+
+# Configuración de integraciones con otros plugins
+integrations:
+  # Integración con TownyChat
+  townychat:
+    # Habilitar integración con TownyChat
+    enabled: true
+    # Canales donde SimpleChat NO debe interferir
+    ignore-channels:
+      - town
+      - nation
+      - mod
+      - admin
+
+# Configuración de filtros
+filters:
+  # Habilitar filtro de palabras prohibidas
+  enabled: false
+  # Palabras prohibidas (se pueden usar regex)
+  blocked-words:
+    - "palabra1"
+    - "palabra2"
+  # Acción cuando se detecta palabra prohibida (BLOCK, REPLACE, WARN)
+  action: BLOCK
+  # Mensaje de reemplazo
+  replacement: "***"
+
+# Configuración de spam
+anti-spam:
+  # Habilitar protección anti-spam
+  enabled: true
+  # Tiempo entre mensajes (en segundos)
+  cooldown: 1
+  # Máximo de mensajes iguales consecutivos
+  max-same-messages: 2
+  # Mensaje de cooldown
+  cooldown-message: "<red>¡Espera %time% segundos antes de enviar otro mensaje!"
+
+# Configuración de logging
+logging:
+  # Guardar chat en archivo
+  enabled: true
+  # Archivo de logs
+  file: "chat.log"
+  # Formato del log
+  format: "[%date% %time%] [%world%] %player%: %message%"
