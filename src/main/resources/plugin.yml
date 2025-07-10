@@ -1,5 +1,5 @@
 name: SimpleChat
-version: '1.0-SNAPSHOT'
+version: '1.0.1'
 main: org.ReDiego0.simpleChat.SimpleChat
 api-version: '1.20'
 depend: [PlaceholderAPI]
@@ -13,6 +13,10 @@ commands:
     usage: /simplechat <reload|toggle|format>
     permission: simplechat.admin
     aliases: [schat, sc]
+  anuncio:
+    description: Enviar un anuncio al chat
+    usage: /anuncio <mensaje>
+    permission: simplechat.admin
 
 permissions:
   simplechat.admin:

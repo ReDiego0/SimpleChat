@@ -58,6 +58,9 @@ public final class SimpleChat extends JavaPlugin {
             if (getCommand("simplechat") != null) {
                 getCommand("simplechat").setExecutor(new SimpleChatCommand(this));
             }
+            if (getCommand("anuncio") != null) {
+                getCommand("anuncio").setExecutor(new org.ReDiego0.simpleChat.commands.AnuncioCommand(this));
+            }
 
             // Registrar PlaceholderAPI
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
