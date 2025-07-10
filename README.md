@@ -1,4 +1,4 @@
-### SimpleChat
+### SimpleChat - 1.0.1
 
 Plugin de chat mediocre para servidores Spigot/Paper.  
 Incluye lo justo para funcionar y lo suficiente para romperse.
@@ -9,6 +9,7 @@ Incluye lo justo para funcionar y lo suficiente para romperse.
 - Filtros básicos de malas palabras y anti-spam
 - Compatibilidad con PlaceholderAPI (si está presente)
 - "Integración" con TownyChat (solo se hace a un lado cuando detecta canales externos)
+- Comando de anuncios con bossbar y reproducción de sonidos
 
 #### Compilación
 Requiere Java 21 y Maven.
