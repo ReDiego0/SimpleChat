@@ -20,7 +20,7 @@ public class ChatPlaceholders extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getAuthor() {
-        return String.join(", ", org.bukkit.Bukkit.getPluginManager().getPlugin("SimpleChat").getDescription().getAuthors());
+        return String.join(", ", org.bukkit.Bukkit.getPluginManager().getPlugin("SimpleChat").getPluginMeta().getAuthors());
     }
 
     @Override
