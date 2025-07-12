@@ -1,4 +1,4 @@
-### SimpleChat - 1.0.1
+### SimpleChat - 1.0.2
 
 Plugin de chat mediocre para servidores Spigot/Paper.  
 Incluye lo justo para funcionar y lo suficiente para romperse.
