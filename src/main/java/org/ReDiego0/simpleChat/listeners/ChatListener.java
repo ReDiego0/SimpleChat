@@ -1,15 +1,12 @@
 package org.ReDiego0.simpleChat.listeners;
 
 import io.papermc.paper.event.player.AsyncChatEvent;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.ReDiego0.simpleChat.SimpleChat;
-// pq si
-import java.util.List;
 
 public class ChatListener implements Listener {
     

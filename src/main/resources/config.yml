@@ -1,5 +1,5 @@
 # Configuración principal de SimpleChat
-# Versión: 1.0
+# Versión: 1.0.2
 
 # Configuración general del plugin
 general:
@@ -39,19 +39,6 @@ chat:
   local-distance: 50
   # Formato cuando no hay grupos configurados
   default-format: "<white>%player_name%<gray>: <white>%message%"
-
-# Configuración de integraciones con otros plugins
-integrations:
-  # Integración con TownyChat
-  townychat:
-    # Habilitar integración con TownyChat
-    enabled: true
-    # Canales donde SimpleChat NO debe interferir
-    ignore-channels:
-      - town
-      - nation
-      - mod
-      - admin
 
 # Configuración de filtros
 filters:

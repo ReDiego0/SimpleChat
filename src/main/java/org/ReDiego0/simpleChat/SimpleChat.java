@@ -8,7 +8,6 @@ import org.ReDiego0.simpleChat.config.ConfigManager;
 import org.ReDiego0.simpleChat.listeners.CommandListener;
 import org.ReDiego0.simpleChat.listeners.ChatListener;
 import org.ReDiego0.simpleChat.managers.ChatManager;
-import org.ReDiego0.simpleChat.managers.GroupManager;
 import org.ReDiego0.simpleChat.placeholders.ChatPlaceholders;
 
 import java.util.HashMap;
@@ -20,7 +19,6 @@ public final class SimpleChat extends JavaPlugin {
     private static SimpleChat instance;
     private ConfigManager configManager;
     private ChatManager chatManager;
-    private GroupManager groupManager;
     private MiniMessage miniMessage;
     private ChatPlaceholders chatPlaceholders;
     private ChatListener chatListener;
@@ -42,11 +40,7 @@ public final class SimpleChat extends JavaPlugin {
             this.miniMessage = MiniMessage.miniMessage();
             
             // Inicializar managers DESPUÉS de cargar configuración
-            this.groupManager = new GroupManager(this);
             this.chatManager = new ChatManager(this);
-            
-            // Cargar grupos
-            groupManager.loadGroups();
 
             // Registrar eventos
             chatListener = new ChatListener(this);
@@ -111,10 +105,6 @@ public final class SimpleChat extends JavaPlugin {
 
     public ChatManager getChatManager() {
         return chatManager;
-    }
-
-    public GroupManager getGroupManager() {
-        return groupManager;
     }
 
     public MiniMessage getMiniMessage() {

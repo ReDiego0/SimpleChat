@@ -4,7 +4,6 @@ import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.ReDiego0.simpleChat.SimpleChat;
-import org.ReDiego0.simpleChat.models.ChatGroup;
 
 public class ChatPlaceholders extends PlaceholderExpansion {
     
@@ -21,12 +20,12 @@ public class ChatPlaceholders extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getAuthor() {
-        return plugin.getDescription().getAuthors().toString();
+        return String.join(", ", org.bukkit.Bukkit.getPluginManager().getPlugin("SimpleChat").getDescription().getAuthors());
     }
 
     @Override
     public @NotNull String getVersion() {
-        return plugin.getDescription().getVersion();
+        return plugin.getPluginMeta().getVersion();
     }
 
     @Override
@@ -39,18 +38,10 @@ public class ChatPlaceholders extends PlaceholderExpansion {
         if (player == null) {
             return "";
         }
-        
-        ChatGroup group = plugin.getGroupManager().getPlayerGroup(player);
-        
+
         switch (params.toLowerCase()) {
             case "group":
-                return group.getName();
-            case "group_priority":
-                return String.valueOf(group.getPriority());
-            case "group_format":
-                return group.getFormat();
-            case "group_permission":
-                return group.getPermission();
+                return plugin.getChatManager().getPlayerGroup(player);
             case "chat_enabled":
                 return String.valueOf(plugin.getConfigManager().isChatEnabledInWorld(player.getWorld().getName()));
             case "can_use_chat":
