@@ -14,6 +14,8 @@ public class ConfigManager {
     private final SimpleChat plugin;
     private FileConfiguration config;
     private File configFile;
+    private FileConfiguration formatsConfig;
+    private File formatsFile;
 
     public ConfigManager(SimpleChat plugin) {
         this.plugin = plugin;
@@ -85,8 +87,20 @@ public class ConfigManager {
         config = YamlConfiguration.loadConfiguration(configFile);
     }
 
+    public void loadFormatsConfig() {
+        formatsFile = new File(plugin.getDataFolder(), "formats.yml");
+        if (!formatsFile.exists()) {
+            plugin.saveResource("formats.yml", false);
+        }
+        formatsConfig = YamlConfiguration.loadConfiguration(formatsFile);
+    }
+
     public FileConfiguration getConfig() {
         return config;
+    }
+
+    public FileConfiguration getFormatsConfig() {
+        return formatsConfig;
     }
 
     public List<String> getEnabledWorlds() {

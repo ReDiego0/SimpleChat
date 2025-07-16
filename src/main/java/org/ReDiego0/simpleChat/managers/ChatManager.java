@@ -6,6 +6,7 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.ReDiego0.simpleChat.SimpleChat;
 
 public class ChatManager {
@@ -31,9 +32,19 @@ public class ChatManager {
         return "default";
     }
 
+    public String getFormatForPlayer(Player player) {
+        String group = getPlayerGroup(player).toLowerCase();
+        FileConfiguration formats = plugin.getConfigManager().getFormatsConfig();
+        if (formats.contains(group + ".format")) {
+            return formats.getString(group + ".format");
+        }
+        // fallback a default
+        return formats.getString("default.format", "<white>%player_name%<gray>: <white>%message%");
+    }
+
     public Component formatMessage(Player player, String message) {
-        String group = getPlayerGroup(player);
-        String format = "<gray>[{group}]</gray> <white>{player}: {message}";
+        String format = getFormatForPlayer(player);
+        String group = getPlayerGroup(player); // Retrieve the group for the player
 
         // Aplica PlaceholderAPI al formato y al mensaje ANTES de MiniMessage
         if (plugin.getConfigManager().isPlaceholderAPIEnabled() &&

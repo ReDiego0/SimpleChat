@@ -35,6 +35,7 @@ public final class SimpleChat extends JavaPlugin {
             
             // Cargar configuración PRIMERO
             configManager.loadConfigs();
+            configManager.loadFormatsConfig();
             
             // Inicializar MiniMessage (viene incluido en Paper)
             this.miniMessage = MiniMessage.miniMessage();
