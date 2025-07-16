@@ -56,7 +56,12 @@ public class ChatManager {
         format = format.replace("{group}", group)
                        .replace("{player}", player.getName())
                        .replace("{world}", player.getWorld().getName())
-                       .replace("{message}", message);
+                       .replace("{message}", message)
+                       .replace("%group%", group)
+                       .replace("%player%", player.getName())
+                       .replace("%player_name%", player.getName())
+                       .replace("%world%", player.getWorld().getName())
+                       .replace("%message%", message);
 
         Component finalComponent;
         if (plugin.getConfigManager().isMinimessageEnabled()) {

@@ -1,5 +1,18 @@
 # Formatos de chat dependiendo del grupo del jugador
 
+# Formatos disponibles
+# "{group}"
+# "{player}"
+# "{world}"
+# "{message}"
+# "%group%"
+# "%player%"
+# "%player_name%"
+# "%world%"
+# "%message%"
+
+# El resto de placeholders son manejados por PlaceholderAPI si está habilitado
+
 default:
   format: "<gray>[Usuario]</gray> <white>%player_name%<gray>: <white>%message%"
 admin:
