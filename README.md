@@ -88,6 +88,18 @@ logging:
   format: "[%date% %time%] [%world%] %player%: %message%"
 ```
 
+formats.yml
+```yml
+# Formatos de chat dependiendo del grupo del jugador
+
+default:
+  format: "<gray>[Usuario]</gray> <white>%player_name%<gray>: <white>%message%"
+admin:
+  format: "<gradient:red:gold>[ADMIN]</gradient> <white>%player_name%<gray>: <yellow>%message%"
+vip:
+  format: "<aqua>[VIP]</aqua> <white>%player_name%<gray>: <white>%message%"
+```
+
 #### Compilación
 Requiere Java 21 y Maven.
 
