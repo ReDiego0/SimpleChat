@@ -3,7 +3,13 @@
 /workspace.xml
 ○
 
+# Intellij IDEA files
+*.iml
 .idea/
 *.iml
 out/
 target/
+
+# VS Code settings
+.vscode/
+.history/
